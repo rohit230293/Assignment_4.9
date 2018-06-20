@@ -1,0 +1,15 @@
+'''
+Problem Statement 1:
+
+You take the SAT and score 1100. The mean score for the SAT is 1026 and the standard
+deviation is 209. How well did you score on the test compared to the average test taker?
+'''
+from scipy import stats as st
+
+mean = 1026
+std_dev = 209
+my_score = 1100
+
+z = (my_score - mean) / std_dev
+percent = st.norm.cdf(z) * 100
+print("I score {:.2f}%, which is {:.2f}% above the avarage.".format(percent,percent-50))
